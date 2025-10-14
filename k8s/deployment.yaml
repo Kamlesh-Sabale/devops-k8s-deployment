@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-k8s-app
+  labels:
+    app: devops-k8s-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-k8s-app
+  template:
+    metadata:
+      labels:
+        app: devops-k8s-app
+    spec:
+      containers:
+      - name: nginx
+        image: 954724045498.dkr.ecr.us-east-1.amazonaws.com/devops-k8s-app:latest
+        ports:
+        - containerPort: 8080
+          name: http
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5

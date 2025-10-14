@@ -27,12 +27,12 @@ RUN addgroup -g 1001 -S appgroup && \
 # Switch to non-root user
 USER appuser
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8080 (non-privileged port)
+EXPOSE 8080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD wget --quiet --tries=1 --spider http://localhost/health || exit 1
+    CMD wget --quiet --tries=1 --spider http://localhost:8080/health || exit 1
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
