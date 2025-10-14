@@ -1,0 +1,8 @@
+.git
+.gitignore
+README.md
+*.md
+.github
+terraform
+k8s
+helm

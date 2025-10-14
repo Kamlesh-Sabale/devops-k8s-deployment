@@ -1,0 +1,38 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars
+crash.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# Helm
+charts/*.tgz
+
+# Misc
+node_modules/
+*.bak
+*.tmp

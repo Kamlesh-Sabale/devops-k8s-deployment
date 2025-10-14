@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps K8s Deployment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            animation: fadeInUp 1s ease-in;
+        }
+        .tech-stack {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .status {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            border: 2px solid rgba(76, 175, 80, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Hello from Kubernetes!</h1>
+        <p>Automated DevOps Deployment Pipeline</p>
+        <p><strong>Deployed by:</strong> Kamlesh Sabale</p>
+        
+        <div class="status">
+            <p>✅ Application Running Successfully</p>
+            <p>Version: 1.0.0</p>
+        </div>
+        
+        <div class="tech-stack">
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">Kubernetes</span>
+            <span class="tech-badge">EKS</span>
+            <span class="tech-badge">Terraform</span>
+            <span class="tech-badge">GitHub Actions</span>
+            <span class="tech-badge">Nginx</span>
+            <span class="tech-badge">Helm</span>
+        </div>
+    </div>
+</body>
+</html>
