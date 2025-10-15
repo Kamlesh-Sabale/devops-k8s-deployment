@@ -7,6 +7,7 @@ on:
     paths:
       - 'app/**'
       - 'k8s/**'
+      - 'helm/**'
       - '.github/workflows/**'
 
 env:
@@ -51,18 +52,23 @@ jobs:
       with:
         version: 'latest'
 
+    - name: Install Helm
+      uses: azure/setup-helm@v3
+      with:
+        version: 'latest'
+
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
 
-    - name: Deploy to EKS
+    - name: Deploy to EKS using Helm
       run: |
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
-        kubectl rollout status deployment/devops-k8s-app
-        kubectl get services devops-k8s-app-service
+        helm upgrade --install devops-k8s-app ./helm/devops-k8s-app \
+          --set image.tag=latest \
+          --wait \
+          --timeout 5m
 
     - name: Verify deployment
       run: |
-        kubectl get pods -l app=devops-k8s-app
-        kubectl get service devops-k8s-app-service
+        kubectl get pods -l app.kubernetes.io/name=devops-k8s-app
+        kubectl get service devops-k8s-app
