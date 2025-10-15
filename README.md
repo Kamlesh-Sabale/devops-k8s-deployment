@@ -10,7 +10,7 @@ Automated deployment of a containerized Nginx web application to Amazon EKS usin
 
 ## 🌐 Live Application
 
-**Application URL:** http://aba590d76268e4dfd8d8c5d2e1d19d11-1820437635.us-east-1.elb.amazonaws.com
+**Application URL:** http://a99de67fde36d4413889e2bdeaa6bf97-2116999052.us-east-1.elb.amazonaws.com/
 
 **Grafana Monitoring:** http://ab9b16f198a5c4b798e9d55d148efb60-1084615911.us-east-1.elb.amazonaws.com
 - Username: `admin`
@@ -326,11 +326,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 **Kamlesh Sabale**
 - GitHub: [@Kamlesh-Sabale](https://github.com/Kamlesh-Sabale)
 
-## 📄 License
-
-This project is created for DevOps learning and demonstration purposes.
 
 ---
 
-**⭐ If you found this project helpful, please give it a star!**
 
